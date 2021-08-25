@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>info</title>
+    <style>
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        
+        #outerbox {
+            /* background-color: antiquewhite; */
+            background-image: url('../info_page/image/background.jpg');
+            /* 배경 이미지의 위치를 정가운데로 위치시킴. left top, right bottom 등으로 활용가능 */
+            background-position: center center;
+        }
+
+        #wrapper {
+            /* background-color: blue; */
+            /* 가로 길이의 최댓값 설정. */
+            max-width: 560px;
+            width:560px;
+            /* div가 페이지의 정중앙(가로)에 위치하도록 설정 */
+            margin: auto;
+            /* position: fixed; */
+            /* top: 50%; */
+            /* left: 50%; */
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        #content {
+            /* background-color: #eeb573; */
+            /* rgba에서 마지막에 들어가는 값은 배경의 투명도를 결정함. 1 = 0%(완전불투명), 0 = 100%(완전투명) */
+            background-color: rgba(180, 158, 173, 0.34);
+            width: 100%;
+            height: 410px;
+            border-radius: 30px;
+
+            display: flex;
+            flex-direction:column;
+            /* justify-content: space-between; */
+            align-items: center;
+        }
+
+        .profile {
+            background-image: url('../info_page/image/profile.png');
+            width: 120px;
+            height: 120px;
+            
+            margin-top: 7%;
+            border-radius: 60px;
+        }
+
+        .title {
+            /* background-color: red; */
+            height: 60px;
+            text-align: center;
+            line-height: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            margin-top: 4%;
+            font-size: 34px;
+            font-weight: 600;
+            color: antiquewhite;
+        }
+
+        /* .title__top {
+            font-size: 24px;
+            font-weight: 600;
+            color: antiquewhite;
+        }
+
+        .title__bottom {
+            font-size: 32px;
+            font-weight: 600;
+            color: antiquewhite;
+        } */
+
+        #content .sub__title {
+            font-size: 15px;
+            color: rgb(236, 202, 208);
+
+            margin-top: 4%;
+        }
+
+    </style>
+    <script>
+        // 페이지가 열렸을 때 실행되는 함수. 한번만 사용가능
+        window.onload=()=>{
+            const outerbox = document.getElementById("outerbox");
+            const container = document.getElementById("wrapper");
+            const innerBox = document.getElementById("content");
+
+            outerbox.style.width = window.innerWidth;
+            outerbox.style.height = window.innerHeight;
+          
+            if(window.innerHeight>450) {
+                // window.innerHeight -> 현재 창의 높이를 불러옴
+                // window.innerWidth -> 현재 창의 넓이를 불러옴
+                container.style.height = window.innerHeight + 'px'; //+'px'를 꼭 붙여줘야함
+                
+                //div의 경우 offsetHeight, offsetWidth을 통해 높이,넓이를 불러옴
+                // var conHeight = container.offsetHeight;
+            } else {
+                //margin이 상하 20px보다 작아지지 않도록 최댓값 설정
+                container.style.height = '450px';
+            }
+
+            if(window.innerWidth<=500) {
+                container.style.width = '460px';
+                innerBox.style.height = '390px';
+            } else if(window.innerWidth<=600) {
+                container.style.width = (window.innerWidth-40) + 'px';
+                innerBox.style.height = (container.offsetWidth-60) + 'px';
+            } else {
+                container.style.width = '560px';
+                innerBox.style.height = '490px';
+            }
+        }
+
+        // 페이지의 크기가 변동되었을 떄 실행되는 함수.
+        window.onresize=()=> {
+            const outerbox = document.getElementById("outerbox");
+            const container = document.getElementById("wrapper");
+            const innerBox = document.getElementById("content");
+
+            outerbox.style.width = window.innerWidth;
+            outerbox.style.height = window.innerHeight;
+
+            if(window.innerHeight>450) {
+                container.style.height = window.innerHeight + 'px'; 
+            } else {
+                container.style.height = '450px';
+            }
+
+            if(window.innerWidth<=500) {
+                container.style.width = '460px';
+                innerBox.style.height = '390px';
+            } else if(window.innerWidth<=600) {
+                container.style.width = (window.innerWidth-40) + 'px';
+                innerBox.style.height = (container.offsetWidth-60) + 'px';
+            } else {
+                container.style.width = '560px';
+                innerBox.style.height = '490px';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="outerbox">
+        <div id="wrapper">
+            <div id="content">
+                <div class="profile">
+                </div>
+                <div class="title">
+                    <span class="title__top">This is</span>
+                    <span class="title__bottom">Loop's profile</span>
+                </div>
+                <div class="sub__title">
+                    who wants to be programmer
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
