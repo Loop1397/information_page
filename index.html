@@ -5,93 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>info</title>
-    <style>
-        * {
-            margin: 0px;
-            box-sizing: border-box;
-        }
-        
-        #outerbox {
-            /* background-color: antiquewhite; */
-            background-image: url('../info_page/image/background.jpg');
-            /* 배경 이미지의 위치를 정가운데로 위치시킴. left top, right bottom 등으로 활용가능 */
-            background-position: center center;
-        }
-
-        #wrapper {
-            /* background-color: blue; */
-            /* 가로 길이의 최댓값 설정. */
-            max-width: 560px;
-            width:560px;
-            /* div가 페이지의 정중앙(가로)에 위치하도록 설정 */
-            margin: auto;
-            /* position: fixed; */
-            /* top: 50%; */
-            /* left: 50%; */
-            display: flex;
-            flex-direction:column;
-            justify-content: center;
-            /* align-items: center; */
-        }
-
-        #content {
-            /* background-color: #eeb573; */
-            /* rgba에서 마지막에 들어가는 값은 배경의 투명도를 결정함. 1 = 0%(완전불투명), 0 = 100%(완전투명) */
-            background-color: rgba(144, 172, 164, 0.34);
-            width: 100%;
-            height: 410px;
-            border-radius: 30px;
-
-            display: flex;
-            flex-direction:column;
-            /* justify-content: space-between; */
-            align-items: center;
-        }
-
-        .profile {
-            background-image: url('../info_page/image/profile.png');
-            width: 120px;
-            height: 120px;
-            
-            margin-top: 7%;
-            border-radius: 60px;
-        }
-
-        .title {
-            /* background-color: red; */
-            height: 60px;
-            text-align: center;
-            line-height: 100%;
-
-            display: flex;
-            flex-direction: column;
-
-            margin-top: 4%;
-            font-size: 34px;
-            font-weight: 600;
-            color: antiquewhite;
-        }
-
-        /* .title__top {
-            font-size: 24px;
-            font-weight: 600;
-            color: antiquewhite;
-        }
-
-        .title__bottom {
-            font-size: 32px;
-            font-weight: 600;
-            color: antiquewhite;
-        } */
-
-        #content .sub__title {
-            font-size: 15px;
-            color: rgb(236, 202, 208);
-
-            margin-top: 4%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="styles/index.css" rel="stylesheet"/>
     <script>
         // 페이지가 열렸을 때 실행되는 함수. 한번만 사용가능
         window.onload=()=>{
@@ -157,6 +72,10 @@
 <body>
     <div id="outerbox">
         <div id="wrapper">
+            <!-- <p>
+                
+            </p> -->
+            <!-- 대체 왜 content를 감싸는게 아니라 content의 앞에 둬야 애니메이션이 잘 적용되는거지...?? -->
             <div id="content">
                 <div class="profile">
                 </div>
@@ -167,14 +86,32 @@
                 <div class="sub__title">
                     who wants to be programmer
                 </div>
-                <div>
-
+                <div class="navigation__items">
+                    <!-- a태그의 주소 앞에 mailto:를 붙이면 해당 주소로 메일을 보낸다는 뜻 -->
+                    <a href="mailto:shwlsdn0906@gmail.com" title="email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <!-- a태그를 사용하면 해당 주소로 이동 시켜줌. -->
+                    <!-- target="_blank"태그는 새창에서 열기를 뜻함. 기본은 _self임 -->
+                    <a href="https://github.com/NoChanwoo" title="github" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/He1l0w0rld" title="twitter" target="_blank"> 
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <i class="fab fa-tumblr"></i>
+                    <a href="https://www.instagram.com/ncw1397/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCDek2fqKkgBw4VBAmrpf_bg" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
                 <div>
-
                 </div>
             </div>
         </div>
     </div>
+    <p>Hello</p>
 </body>
 </html>
